@@ -1,20 +1,28 @@
 <html>
     <head>
         <title>JS ES 3</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <h1>JS exercise 3</h1>
-        <h2>Simple calculator with dynamic rendering and access to</h2>
-        <div id="div1"></div>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <table id="myT">N</table>
-
-        <button id="btn1">
-
-        </button>
+        <h2>Simple calculator</h2>
+        
+        <table id="myT" style="width: 5px; margin: 10px 0; border: 2px solid; ">
+            <thead>
+                <tr><td>N</td></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="div1">a</div>
+        
         <script>
-
+            $("body").append($("<label id='lbl1'></label>"))
+            $("body")
+            .append($("<button id='btn1>add</button>"))
+            .click(function () {
+                linea="<tr><td>"+$("#lbl1").get+"</td></tr>";
+                $("tbody").append($("linea"));
+            })
         </script>
     </body>
 </html>
