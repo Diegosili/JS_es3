@@ -2,28 +2,54 @@
     <head>
         <title>JS ES 3</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            table, td, tr {
+                border: 1px solid;
+            }
+        </style>
     </head>
     <body>
         <h1>JS exercise 3</h1>
         <h2>Simple calculator</h2>
         
-        <table id="myT" style="border: 1px solid">
+        <table id="myT">
             <thead>
-                <tr style="border: 1px solid;">
-                    <td style="border: 1px solid;">N</td>
+                <tr>
+                    <td>N1</td>
+                    <td>Sign</tdid=>
+                    <td>N2</tdd=>
+                    <td>Result</td>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
-        Enter a number: <input id="num" type="text"></input>
+        Enter first number number: <input id="num1" type="text"><br></input>
+        Enter second number number: <input id="num2" type="text"><br></input>
         <button id="btn1">add</button>
+        <button id="plus">plus</button>
+        <button id="minus">minus</button>
+        <button id="mult">multiply</button>
+        <button id="div">divide</button>
 
         <script>
-            $("body").append($("<label id='lbl1'></label>"))
-            $("#btn1").click(function () {
-                $("tbody").append("<tr style='border: 1px solid';><td style='border: 1px solid'>" + $("#num").val() + "</td></tr>");
-                $("#num").val("");
-            })
+            var line = "";
+            var tot = "";
+            var line = "";
+            var n1 = parseInt($("#num1").val());
+            var n2 = parseInt($("#num2").val());
+            // $("#btn1").click(function () {
+            //     $("tbody").append("<tr><td>" + $("#num1").val() + "</td></tr>");
+            //     $("#num1").val("");
+            // });
+
+            $("#plus").click(function() {
+                tot = n1+n2;
+                var string = "<td><tr>" + n1 + "<td><td>" + "+" + "<td><td>" + n2 + "<td><td>" + tot + "<td><tr>";
+                $("#num1").val("");
+                $("#num2").val("");
+                line = $(string);
+                $("tbody").append(line);
+            });
         </script>
     </body>
 </html>
